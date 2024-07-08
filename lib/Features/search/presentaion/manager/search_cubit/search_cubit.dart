@@ -12,11 +12,11 @@ class SearchbookCubit extends Cubit<SearchBookState> {
   ) : super(SearchInitial());
   final SearchRepo searchrepo;
   Future<void> fetchSearchBooks({
-    required String categoryName,
+    required String bookName,
   }) async {
     emit(SearchbookLoading());
     var result = await searchrepo.fetchSearchBooks(
-     categoryName,
+     bookName,
     );
     result.fold((failer) {
       emit(SearchbookFailure(failer.message));
