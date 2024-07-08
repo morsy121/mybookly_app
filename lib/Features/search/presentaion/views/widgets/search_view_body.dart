@@ -39,7 +39,7 @@ class _SearchViewBodyState extends State<SearchViewBody> {
                     if (formKey.currentState!.validate()) {
                       BlocProvider.of<SearchbookCubit>(context)
                           .fetchSearchBooks(
-                        categoryName: data,
+                        bookName: data,
                       );
                     } else {
                       autoValidateMode = AutovalidateMode.always;
@@ -55,7 +55,7 @@ class _SearchViewBodyState extends State<SearchViewBody> {
                   onPressed: () {
                     if (formKey.currentState!.validate()) {
                       BlocProvider.of<SearchbookCubit>(context)
-                          .fetchSearchBooks(categoryName: textController.text);
+                          .fetchSearchBooks(bookName: textController.text);
                     } else {
                       autoValidateMode = AutovalidateMode.always;
                       setState(() {});
